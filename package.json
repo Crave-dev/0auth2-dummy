@@ -1,0 +1,30 @@
+{
+	"name": "0auth2-dummy",
+	"version": "1.0.0",
+	"description": "simulate 0auth2 flow",
+	"main": "index.js",
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"start": "concurrently \"npm run start --workspace=auth-provider\" \"npm run start --workspace=backend\" \"npm run start --workspace=client\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Crave-dev/0auth2-dummy.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Crave-dev/0auth2-dummy/issues"
+	},
+	"homepage": "https://github.com/Crave-dev/0auth2-dummy#readme",
+	"dependencies": {
+		"express": "^5.1.0",
+		"serve": "^14.2.4"
+	},
+	"devDependencies": {
+		"concurrently": "^9.1.2"
+	}
+}
