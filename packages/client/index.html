@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mock OAuth Client</title>
+	</head>
+	<body>
+		<h1>Mock OAuth Client</h1>
+		<button id="login-btn">Login with Mock OAuth</button>
+
+		<script>
+			document
+				.getElementById('login-btn')
+				.addEventListener('click', () => {
+					const clientId = 'client-id'
+					const redirectUri = encodeURIComponent(
+						'http://localhost:5001/callback'
+					)
+					const responseType = 'code'
+					const state = 'xyz'
+
+					const url = `http://localhost:4000/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&state=${state}`
+
+					// Redirect to auth provider
+					window.location.href = url
+				})
+		</script>
+	</body>
+</html>
